@@ -88,7 +88,7 @@
     </header>
     <section>
         <div class="link_container">
-        <a class="back_home" href="http://localhost/proyectoT9/index.php?ordered=listadoPersonajes">
+        <a class="back_home" href="https://mdimassimo.com/tareasDWES/tarea9/index.php?ordered=listadoPersonajes">
             <h3> ⬅️Volver al inicio </h3>
         </a>
         </div>
@@ -97,7 +97,7 @@
         ?>
         <!--<img src="./Assets/images/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg" height="300px">-->
         <?php
-        $pathBaseAPI = "http://localhost/proyectoT9/API.php";
+        $pathBaseAPI = "https://mdimassimo.com/tareasDWES/tarea9/API.php";
             if (isset($_GET["ordered"]) && isset($_GET["id"]) && $_GET["ordered"] == "obtenerPersonajes"){
                     //Se realiza la peticion a la api que nos devuelve el JSON con la información de los autores
                     $app_info = file_get_contents($pathBaseAPI . '?ordered=obtenerPersonajes&id=' . $_GET["id"]);

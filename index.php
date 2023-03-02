@@ -166,7 +166,7 @@
     <section>
         <div class="persons">
     <?php
-    $pathBaseAPI = "http://localhost/proyectoT9/API.php";
+    $pathBaseAPI = "https://mdimassimo.com/tareasDWES/tarea9/API.php";
         if (isset($_GET["ordered"]) && $_GET["ordered"] == "listadoPersonajes"){
                 //Se realiza la peticion a la api que nos devuelve el JSON con la información de los autores
                 $app_info = file_get_contents($pathBaseAPI . '?ordered=listadoPersonajes');
@@ -175,22 +175,11 @@
                 $idPersonaje = 1;
                 for($i=0; $i < 9; $i++){                    
                     $nombre = $app_info['results'][$i]['name'];
-                    echo "<div class='person" . $idPersonaje . "'><a href='http://localhost/proyectoT9/personPage.php?ordered=obtenerPersonajes&id=" . $idPersonaje . "'><h3>" . $nombre . "</h3></a></div>";
+                    echo "<div class='person" . $idPersonaje . "'><a href='https://mdimassimo.com/tareasDWES/tarea9/personPage.php?ordered=obtenerPersonajes&id=" . $idPersonaje . "'><h3>" . $nombre . "</h3></a></div>";
                     $idPersonaje++;
                 }
             }
     ?>
-    <!--
-            <div class="person1"> </div>
-            <div class="person2"> </div>
-            <div class="person3"> </div>
-            <div class="person4"> </div>
-            <div class="person5"> </div>
-            <div class="person6"> </div>
-            <div class="person7"> </div>
-            <div class="person8"> </div>
-            <div class="person9"> </div>
-        -->
         </div>
     </section>
 </body>
