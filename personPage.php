@@ -95,14 +95,14 @@
         <?php
         echo "<img src='./Assets/images/" . $_GET["id"] . ".jpg' height='300px'>";
         ?>
-        <!--<img src="./Assets/images/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg" height="300px">-->
         <?php
         $pathBaseAPI = "https://mdimassimo.com/tareasDWES/tarea9/API.php";
             if (isset($_GET["ordered"]) && isset($_GET["id"]) && $_GET["ordered"] == "obtenerPersonajes"){
-                    //Se realiza la peticion a la api que nos devuelve el JSON con la información de los autores
+                    //Se obtiene todo el contenido en bruto de la consulta a la API
                     $app_info = file_get_contents($pathBaseAPI . '?ordered=obtenerPersonajes&id=' . $_GET["id"]);
-                    // Se decodifica el fichero JSON y se convierte a array
+                    //Se decodifica el fichero JSON y se convierte a array
                     $app_info = json_decode($app_info, true);
+                    //Se accede a la información correspondiente
                         echo "<h2>" . $app_info["name"]. "</h2><br>";
                         echo "<p>Cumpleaños: " . $app_info["birth_year"]. "</p><br>";
                         echo "<p>Altura (cm): " . $app_info["height"]. "</p><br>";            
