@@ -168,11 +168,12 @@
     <?php
     $pathBaseAPI = "https://mdimassimo.com/tareasDWES/tarea9/API.php";
         if (isset($_GET["ordered"]) && $_GET["ordered"] == "listadoPersonajes"){
-                //Se realiza la peticion a la api que nos devuelve el JSON con la información de los autores
+                //Se obtiene todo el contenido en bruto de la consulta a la API
                 $app_info = file_get_contents($pathBaseAPI . '?ordered=listadoPersonajes');
                 // Se decodifica el fichero JSON y se convierte a array
                 $app_info = json_decode($app_info, true);
                 $idPersonaje = 1;
+                //Se limita a 9 el número de personajes para no crear una página excesivamente larga, ya que hay muchos personajes
                 for($i=0; $i < 9; $i++){                    
                     $nombre = $app_info['results'][$i]['name'];
                     echo "<div class='person" . $idPersonaje . "'><a href='https://mdimassimo.com/tareasDWES/tarea9/personPage.php?ordered=obtenerPersonajes&id=" . $idPersonaje . "'><h3>" . $nombre . "</h3></a></div>";
